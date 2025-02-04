@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first_application/model/characteristic.model.dart';
 import 'package:flutter_first_application/model/product.model.dart';
 import 'package:flutter_first_application/pages/product.dart';
 
@@ -37,9 +38,9 @@ class _MyHomePageState extends State {
         description:
             'Baskets Puma rouges, modèle sport et tendance. Parfaites pour le quotidien comme pour le sport.',
         characteristics: [
-          'Semelle amortissante',
-          'Tissu respirant',
-          'Design moderne'
+          Characteristic(text: 'Semelle amortissante'),
+          Characteristic(text: 'Tissu respirant'),
+          Characteristic(text: 'Design moderne')
         ],
         price: 89.99,
         imgUrl: 'assets/img/puma-rouge.jpeg'),
@@ -48,9 +49,12 @@ class _MyHomePageState extends State {
         description:
             'Baskets Nike Air confortables et stylées pour toutes les occasions.',
         characteristics: [
-          'Coussin d air',
-          'Tissu résistant',
-          'Confort optimal'
+          Characteristic(
+              text: 'Coussin d air',
+              icon: Icons.airline_stops_rounded,
+              color: Colors.red),
+          Characteristic(text: 'Tissu résistant'),
+          Characteristic(text: 'Confort optimal')
         ],
         price: 119.99,
         imgUrl: 'assets/img/nike.webp'),
@@ -58,7 +62,11 @@ class _MyHomePageState extends State {
         title: 'Adidas Run',
         description:
             'Chaussures Adidas idéales pour la course et le sport au quotidien.',
-        characteristics: ['Légèreté', 'Bonne adhérence', 'Respirabilité'],
+        characteristics: [
+          Characteristic(text: 'Légèreté'),
+          Characteristic(text: 'Bonne adhérence'),
+          Characteristic(text: 'Respirabilité')
+        ],
         price: 99.99,
         imgUrl: 'assets/img/adidas.avif'),
   ];

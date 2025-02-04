@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first_application/model/characteristic.model.dart';
 import 'package:flutter_first_application/model/product.model.dart';
 
 class MyProductPage extends StatefulWidget {
@@ -79,10 +80,7 @@ class _MyProductPages extends State<MyProductPage> {
             ListBody(
               children: [
                 ...widget.product.characteristics.map(
-                  (characteristic) => _buildFeatureRow(
-                    Icons.check_circle_outline,
-                    characteristic,
-                  ),
+                  (characteristic) => _buildFeatureRow(characteristic),
                 )
               ],
             ),
@@ -121,14 +119,14 @@ class _MyProductPages extends State<MyProductPage> {
     );
   }
 
-  Widget _buildFeatureRow(IconData icon, String text) {
+  Widget _buildFeatureRow(Characteristic characteristic) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 20, color: Colors.green),
+          Icon(characteristic.icon, size: 20, color: characteristic.color),
           const SizedBox(width: 8),
-          Text(text, style: const TextStyle(fontSize: 16)),
+          Text(characteristic.text, style: const TextStyle(fontSize: 16)),
         ],
       ),
     );
